@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krazy Markdown Lucky Draw</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+       background-color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      max-width: 460px;
+      width: 90%;
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      
+    }
+
+    h1 {
+      color: #e63946;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d62828;
+    }
+
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: #2a9d8f;
+    }
+
+    .qr-section {
+      margin-top: 25px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .qr-section p {
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 🖼️ 替换下面的logo为你的图片 -->
+    <img src="./photo/logo.png" alt="Krazy Markdown Logo" class="logo" />
+    <h1>Krazy Markdown Lucky Draw 🎉</h1>
+    <p>Spend $50 or more? Enter your info below for a chance to win $50 store credit every week!</p>
+
+    <form id="luckyForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+
+      <button type="submit">Submit</button>
+      <div class="message" id="message"></div>
+    </form>
+
+    <div class="qr-section">
+      <p>📱 Or scan to fill out on your phone:</p>
+      <canvas id="qrcode"></canvas>
+    </div>
+
+    <footer>© 2025 Krazy Markdown | 31 W Whipp Rd, Dayton, OH</footer>
+  </div>
+
+  <!-- ✅ 引入二维码生成库 -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+  <script>
+    // 生成二维码，默认使用当前网页URL
+    const qrCanvas = document.getElementById('qrcode');
+    const currentUrl = window.location.href;
+    QRCode.toCanvas(qrCanvas, currentUrl, { width: 160 }, function (error) {
+      if (error) console.error(error);
+    });
+
+    // 表单提交逻辑
+    document.getElementById("luckyForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        email: form.email.value.trim()
+      };
+
+      const messageDiv = document.getElementById("message");
+      messageDiv.textContent = "Submitting...";
+
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyOSks00oQnIZX6FuWZEsJGK-Tj37-LNcn6w6Ny6xEh3lOBTK33M5RrKGgRKio64ix1/exec", {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        messageDiv.textContent = "🎉 Thanks for joining our Lucky Draw!";
+        form.reset();
+      } catch (error) {
+        console.error(error);
+        messageDiv.textContent = "❌ Something went wrong. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
