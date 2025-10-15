@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Krazy Markdown</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    :root{
+      --accent:#fa8f4d;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:linear-gradient(180deg,#fff,#f7f7f9);
+      --maxw:1100px;
+      --radius:12px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+      .btn-submit {
+      width: 100%;
+      background-color: #fa8f4d;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-submit:hover {
+      background-color: #d62839;
+    }
+        .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: #2a9d8f;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:var(--maxw);margin:18px auto;padding:18px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:96px;height:96px;object-fit:cover;solid var(--accent)}
+    h1{margin:0;font-size:1.5rem}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-btn{background:transparent;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;color:#333}
+    .nav-btn.active{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(230,57,70,0.16)}
+    main{margin-top:18px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .small{font-size:0.95rem;color:var(--muted)}
+    .grid{display:grid;gap:14px}
+    .cols3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .img-placeholder{background:linear-gradient(180deg,#f1f5f9,#fff);border:1px dashed #e6e6e6;border-radius:10px;height:160px;display:flex;align-items:center;justify-content:center;color:#9aa3ad}
+    ul{padding-left:18px;margin:8px 0}
+    .badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700}
+    footer{margin-top:28px;padding-top:14px;border-top:1px solid #eee;color:var(--muted);font-size:0.92rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    form label{display:block;margin-bottom:6px;font-weight:600}
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-bottom:12px;font-size:0.98rem}
+    .btn{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted)}
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .logo{width:64px;height:64px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- 替换为你的 logo -->
+        <img class="logo" src="./Photo/logo.png" alt="Krazy Markdown Logo" />
+        <div>
+          <h1>Krazy Markdown</h1>
+          <div class="small">31 W Whipp Rd, Dayton, OH</div>
+        </div>
+      </div>
+
+      <nav id="nav">
+        <button class="nav-btn active" data-target="home">Home</button>
+        <button class="nav-btn" data-target="bins">Bin Sale</button>
+        <button class="nav-btn" data-target="discount">Discount Zone</button>
+        <button class="nav-btn" data-target="other">Other Sales</button>
+        <button class="nav-btn" data-target="pallets">Pallet Sales</button>
+        <button class="nav-btn" data-target="contact">Contact</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="card hero">
+
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+          <h1 class="display-4 fw-bold text-body-emphasis">Welcome to Krazy Markdown</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Your ultimate discount & liquidation store in Dayton. New items arrive weekly—electronics, home
+              goods, clothing, and mystery boxes. Prices drop daily in our Bin Sale. Visit us for unbeatable deals and weekly
+              giveaways.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> 
+              <!-- <button type="button"
+                class="btn btn-primary btn-lg px-4 me-sm-3">Weekly Bin Schedule</button>  -->
+                <div class="card" style="min-width:220px">
+              <div class="badge">Weekly Bin Schedule</div>
+              <ul style="margin-top:8px; text-align: left; "  class="small">
+                <li>Fri — All Bin Items $12</li>
+                <li>Sat — All Bin Items $10</li>
+                <li>Sun — All Bin Items $8</li>
+                <li>Mon — All Bin Items $5</li>
+                <li>Tue — All Bin Items $3</li>
+                <li>Wed — All Bin Items $1</li>
+                <li>Thu — Closed (restock)</li>
+              </ul>
+            </div>
+              <!-- <button type="button"
+                class="btn btn-outline-secondary btn-lg px-4">Specials</button> -->
+                <div class="card" style="min-width:220px">
+              <div class="badge">Specials</div>
+              <ul style="margin-top:8px; text-align: left; " class="small"> 
+                <li>$3 Unknown Packages</li>
+                <li>$5 Mystery Bags</li>
+                <li>$5 All Clothes Each </li>
+                <li>$5 All Shoes Each</li>
+                <li>$50 Super Mystery Boxes</li>
+                <li>$$ High Value Discount Zone</li>
+                <li>$$$ Bulk Pallet Sales</li>
+              </ul>
+            </div>
+               </div>
+          </div>
+          <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-5"> <img src="./Photo/StoreFront.JPG" class="img-fluid border rounded-3 shadow-lg mb-4"
+                alt="Example image" width="700" height="500" loading="lazy"> </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BIN SALE -->
+      <section id="bins" class="card" style="display:none;margin-top:18px">
+        <h2>Bin Sale</h2>
+        <p class="small">Explore our large selection of bin items. Inventory rotates often—dig in for hidden treasures and daily price drops.</p>
+
+        <div class="grid cols3" style="margin-top:14px">
+          <!-- 填入你的图片或商品信息 -->
+          <div class="card">
+    <img src="./Photo/binphoto1.JPG" alt="Bin Photo 1" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin A</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+
+          <div class="card">
+    <img src="./Photo/binphoto2.JPG" alt="Bin Photo 2" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin B</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+
+          <div class="card">
+    <img src="./Photo/binphoto3.JPG" alt="Bin Photo 3" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin C</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+        </div>
+
+          <div class="grid cols3" style="margin-top:14px">
+          <!-- 填入你的图片或商品信息 -->
+          <div class="card">
+    <img src="./Photo/binphoto1.JPG" alt="Bin Photo 1" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin A</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+
+          <div class="card">
+    <img src="./Photo/binphoto2.JPG" alt="Bin Photo 2" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin B</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+
+          <div class="card">
+    <img src="./Photo/binphoto3.JPG" alt="Bin Photo 3" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin C</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+        </div>
+
+
+
+      </section>
+
+      <!-- DISCOUNT ZONE -->
+      <section id="discount" class="card" style="display:none;margin-top:18px">
+        <h2>Discount Zone</h2>
+        <p class="small">Premium, high-value discounted items—overstock and returns from major retailers like Costco, Target, and Walmart.</p>
+
+        <div class="grid" style="margin-top:12px">
+          <div class="card" style="display:flex;gap:12px;align-items:center">
+            <div style="flex:1">
+            <img src="./Photo/discount1.JPG" alt="Outdoor Tools" style="width:100%;border-radius:10px;">
+            </div>
+            <div style="flex:1">
+              <h4>Outdoor & Power Tools</h4>
+              <div class="small">Lawn mowers, pressure washers, patio sets — great savings.</div>
+            </div>
+          </div>
+
+          <div class="card" style="display:flex;gap:12px;align-items:center">
+            <div style="flex:1">
+            <img src="./Photo/discount2.JPG" alt="Appliances" style="width:100%;border-radius:10px;">
+            </div>
+            <div style="flex:1">
+              <h4>Appliances & Home</h4>
+              <div class="small">Refrigerators, vacuums, kitchen items — high-value deals.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OTHER SALES -->
+      <section id="other" class="card" style="display:none;margin-top:18px">
+        <h2>Other Sales</h2>
+        <p class="small">Shoes, clothes, mystery bags & boxes, unknown packages—something for everyone.</p>
+
+        <div class="grid cols3" style="margin-top:12px">
+          <div class="card text-center">
+    <img src="./Photo/shoes.JPG" alt="Shoes" style="width:100%;border-radius:10px;">
+            <h4 style="margin-top:8px">Shoes</h4>
+            <div class="muted">$5 per pair</div>
+          </div>
+
+          <div class="card text-center">
+    <img src="./Photo/clothes.JPG" alt="Clothes" style="width:100%;border-radius:10px;">
+            <h4 style="margin-top:8px">Clothes</h4>
+            <div class="muted">$5 each</div>
+          </div>
+
+          <div class="card text-center">
+    <img src="./Photo/mysterybags.JPG" alt="Mystery Bags" style="width:100%;border-radius:10px;">
+            <h4 style="margin-top:8px">$5 Mystery Bags</h4>
+            <div class="muted">6–8 items per bag, sorted by size</div>
+          </div>
+
+          <div class="card text-center">
+    <img src="./Photo/mysteryboxes.JPG" alt="Mystery Boxes" style="width:100%;border-radius:10px;">
+            <h4 style="margin-top:8px">$50 Super Boxes</h4>
+            <div class="muted">Big surprises and high-value items</div>
+          </div>
+
+          <div class="card text-center">
+    <img src="./Photo/unknownpackages.JPG" alt="Unknown Packages" style="width:100%;border-radius:10px;">
+            <h4 style="margin-top:8px">Unknown Packages</h4>
+            <div class="muted">$3 each — returns & misdelivered items</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PALLET SALES -->
+      <section id="pallets" class="card" style="display:none;margin-top:18px">
+        <h2>Bulk Pallet Sales</h2>
+        <p class="small">Bulk pallet sales for resellers. Visit store to see available pallets and pricing, or contact us for a quote.</p>
+
+        <div class="card" style="margin-top:12px">
+  <img src="./Photo/pallets.JPG" alt="Pallet Sales" style="width:100%;border-radius:10px;">
+          <ol style="margin-top:12px">
+            <li class="small">Call us to browse pallet listings by photo</li>
+            <li class="small">Pay and arrange pickup or delivery</li>
+            <li class="small">Bulk discounts available — contact for details</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="card" style="display:none;margin-top:18px">
+        <h2>Contact </h2>
+          <div style="margin-top:14px">
+          <strong>Address:</strong> 31 W Whipp Rd, Dayton, OH 45459<br>
+          <strong>Email:</strong> info@krazymarkdown.com<br>
+          <strong>Social:</strong> Facebook / Instagram @krazymarkdown
+        </div>
+        <p class="small">Questions? Message us below </p>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-top:12px">
+          <div class="card">
+            <h3 style="margin:0 0 8px">Message Us</h3>
+            <form id="contactForm">
+              <label for="cname">Name</label>
+              <input type="text" id="cname" name="cname" placeholder="Your name" required />
+
+              <label for="cphone">Phone Number</label>
+              <input type="tel" id="cphone" name="cphone" placeholder="Your phone number" required />
+
+              <label for="cemail">Email</label>
+              <input type="email" id="cemail" name="cemail" placeholder="Your email" required />
+
+              <label for="cmsg">Message</label>
+              <textarea type="text" id="cmsg" name="cmsg" rows="4" placeholder="How can we help?" required></textarea>
+
+              <!-- <button class="btn" type="submit">Send Message</button> -->
+              <button type="submit" class="btn-submit">Submit</button>
+              <div class="message" id="message"></div>
+            </form>
+          </div>
+        </div>
+
+
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 Krazy Markdown</div>
+      <div>31 W Whipp Rd, Dayton, OH</div>
+      <div class="small">Follow us on Facebook & Instagram</div>
+    </footer>
+  </div>
+
+  
+  <script>
+    // Simple client-side routing (show/hide sections)
+    (function(){
+      const navBtns = document.querySelectorAll('.nav-btn');
+      const sections = ['home','bins','discount','other','pallets','contact'];
+      function goto(id){
+        sections.forEach(s=>{
+          const el = document.getElementById(s);
+          if(el) el.style.display = (s===id)? 'block' : 'none';
+        });
+        navBtns.forEach(b=>{
+          b.classList.toggle('active', b.dataset.target === id);
+        });
+        // scroll to top of main area
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+      navBtns.forEach(b=> b.addEventListener('click', ()=> goto(b.dataset.target)));
+      // default is home (already visible)
+    })();
+
+    // 表单提交逻辑
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        name: form.cname.value.trim(),
+        phone: form.cphone.value.trim(),
+        email: form.cemail.value.trim(),
+        message: form.cmsg.value.trim()
+      };
+
+      const messageDiv = document.getElementById("message");
+      messageDiv.textContent = "Submitting...";
+
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbx4JE78gjzMN1KX60oKvNXRHrs_l66mX8u9moj0IbuQOhXjGJLlRC9Q5RAEtVhCHLw/exec", {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        messageDiv.textContent = "🎉 Thanks for sending us a message!";
+        form.reset();
+      } catch (error) {
+        console.error(error);
+        messageDiv.textContent = "❌ Something went wrong. Please try again.";
+      }
+    });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
