@@ -4,9 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Krazy Markdown</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <style>
     :root{
-      --accent:#e63946;
+      --accent:#fa8f4d;
       --muted:#6b7280;
       --card:#ffffff;
       --bg:linear-gradient(180deg,#fff,#f7f7f9);
@@ -16,7 +17,7 @@
     }
       .btn-submit {
       width: 100%;
-      background-color: #e63946;
+      background-color: #fa8f4d;
       color: white;
       border: none;
       padding: 12px;
@@ -38,7 +39,7 @@
     .wrap{max-width:var(--maxw);margin:18px auto;padding:18px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:72px;height:72px;border-radius:12px;object-fit:cover;border:3px solid var(--accent)}
+    .logo{width:96px;height:96px;object-fit:cover;solid var(--accent)}
     h1{margin:0;font-size:1.5rem}
     nav{display:flex;gap:8px;flex-wrap:wrap}
     .nav-btn{background:transparent;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;color:#333}
@@ -69,7 +70,7 @@
     <header>
       <div class="brand">
         <!-- 替换为你的 logo -->
-        <img class="logo" src="https://via.placeholder.com/150?text=Logo" alt="Krazy Markdown Logo" />
+        <img class="logo" src="./Photo/logo.png" alt="Krazy Markdown Logo" />
         <div>
           <h1>Krazy Markdown</h1>
           <div class="small">31 W Whipp Rd, Dayton, OH</div>
@@ -89,14 +90,19 @@
     <main>
       <!-- HOME -->
       <section id="home" class="card hero">
-        <div>
-          <h2>Welcome to Krazy Markdown</h2>
-          <p class="small">Your ultimate discount & liquidation store in Dayton. New items arrive weekly—electronics, home goods, clothing, and mystery boxes. Prices drop daily in our Bin Sale. Visit us for unbeatable deals and weekly giveaways.</p>
 
-          <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
-            <div class="card" style="min-width:220px">
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+          <h1 class="display-4 fw-bold text-body-emphasis">Welcome to Krazy Markdown</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Your ultimate discount & liquidation store in Dayton. New items arrive weekly—electronics, home
+              goods, clothing, and mystery boxes. Prices drop daily in our Bin Sale. Visit us for unbeatable deals and weekly
+              giveaways.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> 
+              <!-- <button type="button"
+                class="btn btn-primary btn-lg px-4 me-sm-3">Weekly Bin Schedule</button>  -->
+                <div class="card" style="min-width:220px">
               <div class="badge">Weekly Bin Schedule</div>
-              <ul style="margin-top:8px" class="small">
+              <ul style="margin-top:8px; text-align: left; "  class="small">
                 <li>Fri — All Bin Items $12</li>
                 <li>Sat — All Bin Items $10</li>
                 <li>Sun — All Bin Items $8</li>
@@ -106,16 +112,26 @@
                 <li>Thu — Closed (restock)</li>
               </ul>
             </div>
-
-            <div class="card" style="min-width:220px">
+              <!-- <button type="button"
+                class="btn btn-outline-secondary btn-lg px-4">Specials</button> -->
+                <div class="card" style="min-width:220px">
               <div class="badge">Specials</div>
-              <p class="small" style="margin-top:8px">$5 Mystery Bags • $50 Super Boxes • Unknown Packages • Discount Zone deals</p>
+              <ul style="margin-top:8px; text-align: left; " class="small"> 
+                <li>$3 Unknown Packages</li>
+                <li>$5 Mystery Bags</li>
+                <li>$5 All Clothes Each </li>
+                <li>$5 All Shoes Each</li>
+                <li>$50 Super Mystery Boxes</li>
+                <li>$$ High Value Discount Zone</li>
+                <li>$$$ Bulk Pallet Sales</li>
+              </ul>
             </div>
+               </div>
           </div>
-        </div>
-
-        <div>
-          <div class="img-placeholder">Replace with hero/store photo</div>
+          <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-5"> <img src="./Photo/StoreFront.png" class="img-fluid border rounded-3 shadow-lg mb-4"
+                alt="Example image" width="700" height="500" loading="lazy"> </div>
+          </div>
         </div>
       </section>
 
@@ -127,23 +143,47 @@
         <div class="grid cols3" style="margin-top:14px">
           <!-- 填入你的图片或商品信息 -->
           <div class="card">
-            <div class="img-placeholder">Bin Photo 1</div>
-            <h4 style="margin:8px 0 6px">Sample Item A</h4>
+    <img src="./Photo/binphoto1.JPG" alt="Bin Photo 1" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin A</h4>
             <div class="muted">Quick detail — good value</div>
           </div>
 
           <div class="card">
-            <div class="img-placeholder">Bin Photo 2</div>
-            <h4 style="margin:8px 0 6px">Sample Item B</h4>
+    <img src="./Photo/binphoto2.JPG" alt="Bin Photo 2" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin B</h4>
             <div class="muted">Quick detail — good value</div>
           </div>
 
           <div class="card">
-            <div class="img-placeholder">Bin Photo 3</div>
-            <h4 style="margin:8px 0 6px">Sample Item C</h4>
+    <img src="./Photo/binphoto3.JPG" alt="Bin Photo 3" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin C</h4>
             <div class="muted">Quick detail — good value</div>
           </div>
         </div>
+
+          <div class="grid cols3" style="margin-top:14px">
+          <!-- 填入你的图片或商品信息 -->
+          <div class="card">
+    <img src="./Photo/binphoto1.JPG" alt="Bin Photo 1" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin A</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+
+          <div class="card">
+    <img src="./Photo/binphoto2.JPG" alt="Bin Photo 2" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin B</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+
+          <div class="card">
+    <img src="./Photo/binphoto3.JPG" alt="Bin Photo 3" style="width:100%;border-radius:10px;">
+            <h4 style="margin:8px 0 6px">Sample Bin C</h4>
+            <div class="muted">Quick detail — good value</div>
+          </div>
+        </div>
+
+
+
       </section>
 
       <!-- DISCOUNT ZONE -->
@@ -154,7 +194,7 @@
         <div class="grid" style="margin-top:12px">
           <div class="card" style="display:flex;gap:12px;align-items:center">
             <div style="flex:1">
-              <div class="img-placeholder" style="height:120px">Lawn Mower / Outdoor</div>
+            <img src="./Photo/discount1.JPG" alt="Outdoor Tools" style="width:100%;border-radius:10px;">
             </div>
             <div style="flex:1">
               <h4>Outdoor & Power Tools</h4>
@@ -164,7 +204,7 @@
 
           <div class="card" style="display:flex;gap:12px;align-items:center">
             <div style="flex:1">
-              <div class="img-placeholder" style="height:120px">Appliances</div>
+            <img src="./Photo/discount2.JPG" alt="Appliances" style="width:100%;border-radius:10px;">
             </div>
             <div style="flex:1">
               <h4>Appliances & Home</h4>
@@ -181,31 +221,31 @@
 
         <div class="grid cols3" style="margin-top:12px">
           <div class="card text-center">
-            <div class="img-placeholder">Shoes</div>
+    <img src="./photo/shoes.jpg" alt="Shoes" style="width:100%;border-radius:10px;">
             <h4 style="margin-top:8px">Shoes</h4>
             <div class="muted">$5 per pair</div>
           </div>
 
           <div class="card text-center">
-            <div class="img-placeholder">Clothes</div>
+    <img src="./photo/clothes.jpg" alt="Clothes" style="width:100%;border-radius:10px;">
             <h4 style="margin-top:8px">Clothes</h4>
             <div class="muted">$5 each</div>
           </div>
 
           <div class="card text-center">
-            <div class="img-placeholder">Mystery Bags</div>
+    <img src="./photo/mysterybags.jpg" alt="Mystery Bags" style="width:100%;border-radius:10px;">
             <h4 style="margin-top:8px">$5 Mystery Bags</h4>
             <div class="muted">6–8 items per bag, sorted by size</div>
           </div>
 
           <div class="card text-center">
-            <div class="img-placeholder">Mystery Boxes</div>
+    <img src="./photo/mysteryboxes.jpg" alt="Mystery Boxes" style="width:100%;border-radius:10px;">
             <h4 style="margin-top:8px">$50 Super Boxes</h4>
             <div class="muted">Big surprises and high-value items</div>
           </div>
 
           <div class="card text-center">
-            <div class="img-placeholder">Unknown Packages</div>
+    <img src="./photo/unknownpackages.jpg" alt="Unknown Packages" style="width:100%;border-radius:10px;">
             <h4 style="margin-top:8px">Unknown Packages</h4>
             <div class="muted">$3 each — returns & misdelivered items</div>
           </div>
@@ -218,9 +258,9 @@
         <p class="small">Bulk pallet sales for resellers. Visit store to see available pallets and pricing, or contact us for a quote.</p>
 
         <div class="card" style="margin-top:12px">
-          <div class="img-placeholder" style="height:160px">Pallet Photo</div>
+  <img src="./photo/pallets.jpg" alt="Pallet Sales" style="width:100%;border-radius:10px;">
           <ol style="margin-top:12px">
-            <li class="small">Browse pallet listings in-store</li>
+            <li class="small">Call us to browse pallet listings by photo</li>
             <li class="small">Pay and arrange pickup or delivery</li>
             <li class="small">Bulk discounts available — contact for details</li>
           </ol>
@@ -271,6 +311,7 @@
     </footer>
   </div>
 
+  
   <script>
     // Simple client-side routing (show/hide sections)
     (function(){
@@ -323,5 +364,8 @@
     });
 
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </body>
 </html>
