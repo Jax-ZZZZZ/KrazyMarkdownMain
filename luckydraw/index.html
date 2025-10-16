@@ -118,9 +118,9 @@
   <div class="container">
     <!-- 🖼️ 替换下面的logo为你的图片 -->
     <img src="./photo/logo.png" alt="Krazy Markdown Logo" class="logo" />
-    <h1>Krazy Markdown Lucky Draw 🎉</h1>
-    <p>Spend $50 or more? Enter your info below for a chance to win $50 store credit every week!</p>
-
+    <h1>Krazy Markdown Lucky Draw🎉</h1>
+    <p>Spend $20 or more in-store for a chance to win $50 in Krazy Markdown Credit! Winners will be announced weekly via our Facebook and Instagram pages.</p>
+    <p>🛍️ Shop. Save. Win Big!</p>
     <form id="luckyForm">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required />
@@ -136,11 +136,15 @@
     </form>
 
     <div class="qr-section">
-      <p>📱 Or scan to fill out on your phone:</p>
+      <!-- <p>📱 Or scan to fill out on your phone:</p> -->
+      <p>📱 Scan to follow our Facebook:</p>
       <canvas id="qrcode"></canvas>
     </div>
 
-    <footer>© 2025 Krazy Markdown | 31 W Whipp Rd, Dayton, OH</footer>
+        <footer>
+      <div>© 2025 Krazy Markdown · All Rights Reserved  </div>
+      <div class="small">Follow us on Facebook & Instagram @krazymarkdown</div>
+    </footer>
   </div>
 
   <!-- ✅ 引入二维码生成库 -->
@@ -149,7 +153,8 @@
   <script>
     // 生成二维码，默认使用当前网页URL
     const qrCanvas = document.getElementById('qrcode');
-    const currentUrl = window.location.href;
+    //const currentUrl = window.location.href;
+    const currentUrl = "https://krazymarkdown.com/luckydraw/index.html";
     QRCode.toCanvas(qrCanvas, currentUrl, { width: 160 }, function (error) {
       if (error) console.error(error);
     });
